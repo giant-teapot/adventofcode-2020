@@ -5,7 +5,7 @@ validated by the Advent of Code website. The goal is to ensure non-regression
 after a refactoring, for instance.
 """
 
-from aoc import day1, day2, day3, day4, day5, day6
+from aoc import day1, day2, day3, day4, day5, day6, day7
 
 def test_day_1():
     """ Validate solutions for day 1 puzzle """
@@ -50,3 +50,9 @@ def test_day_6():
     group_answers = day6.load_input("inputs/day6")
     assert sum(map(day6.answers_union, group_answers)) == 6583
     assert sum(map(day6.answers_intersection, group_answers)) == 3290
+
+def test_day_7():
+    """ Validate solutions for day 7 puzzle """
+    specs = day7.load_input("inputs/day7")
+    assert len(day7.search_containers(specs, "shiny gold")) == 115
+    assert day7.count_bags_inside(specs, "shiny gold")-1 == 1250
